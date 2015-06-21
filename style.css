@@ -13,11 +13,12 @@ main {
 
 }
 .board {
+  position: relative;
   width: 50%;
   margin: 0 auto;
   display: block;
 }
-.box {
+.boxes {
   font-family: 'Raleway', sans-serif;
   padding: 0px 35px;
   float: left;
@@ -32,7 +33,7 @@ main {
   font-size: 175px;
 }
 .box:after {
-  overflow: auto;
+  overflow: hidden;
 }
 header {
   padding: 30px;
@@ -41,8 +42,16 @@ header {
   color: black;
   text-align: center;
 }
+.button:before {
+  display: none;
+}
+.hidden {
+    display: none;
+}
 .button, .score {
-  border-radius: 50%;
+  display: block;
+/*   float: right;
+ */  border-radius: 50%;
   margin-left: 125px;
   margin-top: 150px;
   /* float: right; */
@@ -50,14 +59,31 @@ header {
   height: 175px;
   background: tan;
   box-shadow: 5px 5px 20px black;
-  font-size: 25px;
-}
-.score {
-  display: block;
-  /* margin-top: 50px; */
-  float: left;
   font-size: 22px;
 }
-.score:after {
+.button:after, .score:after {
+  overflow: hidden;
+}
+ .score {
+  display: block;
+  margin-left: -20px;
+  margin-top: 50px;
+ *//*   float: left;
+ */  font-size: 22px;
+}
+ */.score:after {
   overflow: auto;
+}
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+.clearfix {
+  zoom: 1; /* ie 6/7 */
 }
